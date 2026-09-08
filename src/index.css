@@ -1,1 +1,14 @@
 @import "tailwindcss";
+@import "@fontsource-variable/source-code-pro";
+
+@theme {
+  --color-primary: #D9C9BA;
+  --color-secondary: #594725;
+  --font-sans: "Source Code Pro Variable", ui-monospace, monospace;
+  --font-mono: "Source Code Pro Variable", ui-monospace, monospace;
+}
+@layer base {
+  body {
+    background-color: var(--color-primary);
+  }
+}
