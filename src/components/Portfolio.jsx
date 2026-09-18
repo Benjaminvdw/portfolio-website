@@ -8,7 +8,7 @@ const projects = [
         title: 'Artroller',
         description: 'Een mock site voor een controller onderneming.',
         tech: ['Next.js', 'TailwindCSS', 'Typescript'],
-        image: artroller,
+        image: artoller,
         url: 'https://webwinkelmain.vercel.app/'
     },
 
