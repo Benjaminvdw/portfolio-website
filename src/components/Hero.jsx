@@ -1,15 +1,17 @@
-import CodeBlock from "./CodeBlock.jsx"
+import woods from '../assets/woods.png'
 
 export default function Hero() {
     return (
-        <div className="p-5">
-            <h1 className="text-5xl">Benjamin van der Westen</h1>
-            <p>{'>'}Fullstack developer</p>
-
-            <div className="justify-center flex flex-row gap-5 mt-10">
-                <a href="https://github.com/"><img className="h-7" src="src/assets/github-142-svgrepo-com.svg" alt="" /></a>
-                <a href="https://linkedin.com/"><img className="h-7" src="src/assets/linkedin-161-svgrepo-com.svg" alt="" /></a>
+        <section className="mx-auto grid max-w-5xl items-center gap-10 px-6 py-24 md:grid-cols-2">
+            <div>
+                <h1 className="text-4xl md:text-5xl">Benjamin van der Westen</h1>
+                <p className="mt-3 text-olive">{'>'}Fullstack developer</p>
+                <div className="mt-8 flex gap-3">
+                    <a href="#werk" className="rounded-lg bg-bark px-5 py-2 text-sand">Bekijk werk</a>
+                    <a href="#contact" className="rounded-lg border border-bark px-5 py-2">Contact</a>
+                </div>
             </div>
-        </div>
+            <img src={woods} alt="Bos" className="aspect-square w-full rounded-xl object-cover" />
+        </section>
     )
 }

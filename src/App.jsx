@@ -1,13 +1,21 @@
 import './App.css'
+import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
-import Work from './components/Work.jsx'
+import Portfolio from './components/Portfolio.jsx'
+import About from './components/About.jsx'
+import Contact from './components/Contact.jsx'
 
 function App() {
   return (
-    <main className='min-h-screen grid place-items-center'>
-      <Hero />
-      <Work />
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <Portfolio />
+        <About />
+      </main>
+      <Contact />
+    </>
   )
 }
 
