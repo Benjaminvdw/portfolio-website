@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "@fontsource-variable/source-code-pro";
+
+@theme {
+  /* Palette */
+  --color-ink: #262001;
+  --color-olive: #736027;
+  --color-bark: #594725;
+  --color-sand: #D9C9BA;
+  --color-stone: #A6998F;
+
+  /* Roles */
+  --color-primary: var(--color-sand);
+  --color-secondary: var(--color-bark);
+  --color-accent: var(--color-olive);
+
+  --font-sans: "Source Code Pro Variable", ui-monospace, monospace;
+  --font-mono: "Source Code Pro Variable", ui-monospace, monospace;
+}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-primary);
+    color: var(--color-ink);
+  }
+}
