@@ -5,10 +5,10 @@ import bramblebeat from '../assets/bramblebeat.png'
 
 const projects = [
     {
-        title: 'Artroller',
+        title: 'Artoller',
         description: 'Een mock site voor een controller onderneming.',
         tech: ['Next.js', 'TailwindCSS', 'Typescript'],
-        image: artoller,
+        image: artroller,
         url: 'https://webwinkelmain.vercel.app/'
     },
 
