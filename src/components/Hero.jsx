@@ -1,4 +1,4 @@
-import woods from '../assets/woods.png'
+import hero from '../assets/hero.png'
 
 export default function Hero() {
     return (
@@ -11,7 +11,7 @@ export default function Hero() {
                     <a href="#contact" className="rounded-lg border border-bark px-5 py-2">Contact</a>
                 </div>
             </div>
-            <img src={woods} alt="Bos" className="aspect-square w-full rounded-xl object-cover" />
+            <img src={hero} alt="Ik" className="aspect-square w-full rounded-xl object-cover" />
         </section>
     )
 }
