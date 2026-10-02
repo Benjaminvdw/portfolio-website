@@ -68,7 +68,7 @@ export default function Contact() {
                         {t.contact.subtitle}
                     </p>
                     <div className="mt-8">
-                        <a href="mailto:Benjaminvanderwesten@gmail.com" className="text-xl font-medium text-olive hover:text-sand transition-colors">
+                        <a href="mailto:Benjaminvanderwesten@gmail.com" className="text-xl font-medium text-olive hover:text-sand transition-colors break-all">
                             Benjaminvanderwesten@gmail.com
                         </a>
                     </div>

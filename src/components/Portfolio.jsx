@@ -19,7 +19,7 @@ const projectsData = [
         title: 'Iambenji.net',
         tech: ['React 19', 'Vite', 'Three.js', 'Cloudflare'],
         image: iambenji,
-        url: 'https://portfolio-286.pages.dev/',
+        url: 'https://iambenji.pages.dev/',
         github: 'https://github.com/Benjaminvdw/iambenji'
     },
     {
