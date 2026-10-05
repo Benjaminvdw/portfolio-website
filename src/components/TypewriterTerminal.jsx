@@ -49,7 +49,7 @@ export default function TypewriterTerminal() {
 {"  "}<span className="text-blue-300">"name"</span>{": "}<span className="text-green-300">"Benjamin van der Westen"</span>{",\n"}
 {"  "}<span className="text-blue-300">"role"</span>{": "}<span className="text-green-300">"{t.terminal.role}"</span>{",\n"}
 {"  "}<span className="text-blue-300">"skills"</span>{": [\n"}
-{"    "}<span className="text-green-300">"React"</span>{", "}<span className="text-green-300">"TailwindCSS"</span>{", "}<span className="text-green-300">"Godot"</span>{", "}<span className="text-green-300">"Python"</span>{"\n"}
+{"    "}<span className="text-green-300">"React"</span>{", "}<span className="text-green-300">"TailwindCSS"</span>{", "}<span className="text-green-300">"Lua"</span>{", "}<span className="text-green-300">"Typescript"</span>{"\n"}
 {"  ],\n"}
 {"  "}<span className="text-blue-300">"status"</span>{": "}<span className="text-yellow-300">"{t.terminal.status}"</span>{"\n"}
 {"}"}
