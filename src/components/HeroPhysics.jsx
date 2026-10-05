@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Matter from 'matter-js';
 
-const SKILLS = ['React', 'Godot', 'Tailwind', 'Next.js', 'Typescript', 'Node.js', 'CSS'];
+const SKILLS = ['React', 'Lua', 'Tailwind', 'Next.js', 'Typescript', 'Node.js', 'CSS'];
 
 export default function HeroPhysics() {
     const sceneRef = useRef(null);
