@@ -1,21 +1,33 @@
-import woods from '../assets/woods.png'
+import woods from '../assets/woods.jpg'
+import { useLanguage } from '../hooks/useLanguage'
 
 export default function About() {
+    const { t } = useLanguage();
+
     return (
-        <section id="over" className="mx-auto grid max-w-5xl items-center gap-10 px-6 py-20 md:grid-cols-[3fr_2fr]">
-            <div>
-                <h2 className="text-4xl">Over mij</h2>
-                <p className="mt-4 leading-relaxed">
-                    Ik ben Benjamin, student aan het MediaCollege Amsterdam. Ik bouw
-                    websites en webapps, meestal met React, Tailwind en Vite, en ik
-                    vind hoe iets aanvoelt uiteindelijk net zo belangrijk als hoe het
-                    onder de motorkap werkt. Het uitzoeken is voor mij het leukste deel
-                    van dit vak: een idee stukje bij beetje ombouwen tot iets dat echt
-                    klopt. Op dit moment werk ik aan BrambleBeat, een co-op rhythm game voor twee spelers.
-                    Buiten het schermwerk speel ik graag spelletjes, maak ik lange natuurwandelingen en verzamel ik graag muziekplaten.
-                </p>
+        <section id="over" className="scroll-mt-14 border-t border-ink/10 py-24">
+            <div className="mx-auto grid max-w-5xl items-center gap-12 px-6 md:grid-cols-[7fr_5fr]">
+                <div>
+                    <h2 className="text-4xl font-medium tracking-[-0.02em]">{t.about.title}</h2>
+                    <div className="mt-6 max-w-xl space-y-4 text-[17px] leading-7 text-bark">
+                        {t.about.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    </div>
+                    <dl className="mt-10 max-w-xl divide-y divide-ink/10 border-y border-ink/10">
+                        {t.about.facts.map(([label, value]) => (
+                            <div key={label} className="grid grid-cols-[8rem_1fr] gap-4 py-3 text-[15px]">
+                                <dt className="font-mono text-xs leading-6 text-muted">{label}</dt>
+                                <dd>{value}</dd>
+                            </div>
+                        ))}
+                    </dl>
+                </div>
+                <img
+                    src={woods}
+                    alt={t.about.photoAlt}
+                    loading="lazy"
+                    className="aspect-[4/5] w-full rounded-2xl bg-raised object-cover"
+                />
             </div>
-            <img className="w-full rounded-xl object-cover" src={woods} alt="" />
         </section>
     )
 }

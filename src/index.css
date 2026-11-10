@@ -1,28 +1,41 @@
 @import "tailwindcss";
+@import "@fontsource-variable/instrument-sans";
 @import "@fontsource-variable/source-code-pro";
 
 @theme {
-  /* Palette */
+  /* Brand palette */
   --color-ink: #262001;
   --color-olive: #736027;
   --color-bark: #594725;
   --color-sand: #D9C9BA;
   --color-stone: #A6998F;
 
-  /* Roles */
-  --color-primary: var(--color-sand);
-  --color-secondary: var(--color-bark);
-  --color-accent: var(--color-olive);
+  /* Warm ramp built around the palette: page, cards, raised fills, text roles */
+  --color-paper: #F3ECE2;
+  --color-card: #FAF6F0;
+  --color-raised: #E8DED1;
+  --color-muted: #75695A;
+  /* Olive lifted for text and accents on the dark footer */
+  --color-olive-light: #B39A55;
 
-  --font-sans: "Source Code Pro Variable", ui-monospace, monospace;
+  --font-sans: "Instrument Sans Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Source Code Pro Variable", ui-monospace, monospace;
+
+  /* One easing curve for every transition */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   body {
-    background-color: var(--color-primary);
+    background-color: var(--color-paper);
     color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-olive);
+    outline-offset: 2px;
   }
 }
