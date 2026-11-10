@@ -32,7 +32,7 @@ export const projects = [
         title: 'Iambenji.net',
         tech: [siReact, siVite, siThreedotjs, siCloudflare],
         image: iambenji,
-        url: 'https://portfolio-286.pages.dev/',
+        url: 'https://iambenji.pages.dev/',
         github: 'https://github.com/Benjaminvdw/iambenji'
     },
     {

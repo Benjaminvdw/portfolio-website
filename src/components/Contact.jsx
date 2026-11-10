@@ -48,7 +48,7 @@ export default function Contact() {
                     </p>
                     <a
                         href="mailto:Benjaminvanderwesten@gmail.com"
-                        className="mt-8 inline-block text-lg font-medium text-sand underline decoration-sand/30 underline-offset-4 transition-colors duration-150 ease-out hover:decoration-olive-light"
+                        className="mt-8 inline-block break-all text-lg font-medium text-sand underline decoration-sand/30 underline-offset-4 transition-colors duration-150 ease-out hover:decoration-olive-light"
                     >
                         Benjaminvanderwesten@gmail.com
                     </a>
