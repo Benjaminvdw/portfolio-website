@@ -1,84 +1,74 @@
-import Placeholder from './Placeholder.jsx'
-import Tilt from 'react-parallax-tilt'
-import artroller from '../assets/artroller.png'
-import iambenji from '../assets/iambenji.png'
-import bramblebeat from '../assets/bramblebeat.png'
+import { ArrowUpRight } from 'lucide-react'
+import { projects } from '../data/projects.js'
 import { useLanguage } from '../hooks/useLanguage'
 
-const projectsData = [
-    {
-        id: 'artoller',
-        title: 'Artoller',
-        tech: ['Next.js', 'TypeScript', 'TailwindCSS'],
-        image: artroller,
-        url: 'https://webwinkelmain.vercel.app/',
-        github: 'https://github.com/Benjaminvdw/webwinkelmain'
-    },
-    {
-        id: 'iambenji',
-        title: 'Iambenji.net',
-        tech: ['React 19', 'Vite', 'Three.js', 'Cloudflare'],
-        image: iambenji,
-        url: 'https://iambenji.pages.dev/',
-        github: 'https://github.com/Benjaminvdw/iambenji'
-    },
-    {
-        id: 'bramblebeat',
-        title: 'Bramblebeat',
-        tech: ['GDScript', 'Python'],
-        image: bramblebeat,
-        url: 'https://benjaminvdw.itch.io/bramblebeat'
-    },
-]
+function TechIcons({ tech }) {
+    return (
+        <ul className="flex flex-wrap items-center gap-4">
+            {tech.map((icon) => (
+                <li key={icon.slug} className="group relative text-muted transition-colors duration-150 ease-out hover:text-ink">
+                    <svg viewBox="0 0 24 24" width={20} height={20} fill="currentColor" aria-hidden="true">
+                        <path d={icon.path} />
+                    </svg>
+                    {/* Shows the name on hover; screen readers read it as the logo's label */}
+                    <span className="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 translate-y-1 whitespace-nowrap rounded-md bg-ink px-2 py-1 text-xs text-paper opacity-0 transition-[opacity,transform] duration-150 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+                        {icon.title}
+                    </span>
+                </li>
+            ))}
+        </ul>
+    )
+}
+
+function ProjectLinks({ project, viewLive }) {
+    const links = [
+        { href: project.url, label: viewLive },
+        project.github && { href: project.github, label: 'GitHub' },
+    ].filter(Boolean)
+
+    return (
+        <div className="flex gap-6">
+            {links.map((link) => (
+                <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex items-center gap-1 text-sm font-medium text-ink transition-colors duration-150 ease-out hover:text-olive"
+                >
+                    {link.label}
+                    <ArrowUpRight size={16} strokeWidth={1.5} className="text-muted transition-colors duration-150 ease-out group-hover:text-olive" />
+                </a>
+            ))}
+        </div>
+    )
+}
 
 export default function Portfolio() {
     const { t } = useLanguage();
 
     return (
-        <section id="werk" className="bg-stone/20 py-24 relative z-30">
+        <section id="werk" className="scroll-mt-14 border-t border-ink/10 py-24">
             <div className="mx-auto max-w-5xl px-6">
-                <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-ink">{t.portfolio.title}</h2>
-                <div className="mt-12 grid gap-8 sm:grid-cols-2">
-                    {projectsData.map((project) => (
-                        <Tilt key={project.title} tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.01} transitionSpeed={500}>
-                            <article className="h-full rounded-2xl bg-sand p-5 shadow-lg border border-stone/30 hover:border-olive/50 transition-colors flex flex-col">
-                                <div className="overflow-hidden rounded-xl">
-                                    <img src={project.image} alt={project.title} className="aspect-video w-full object-cover transform hover:scale-105 transition-transform duration-500" />
+                <h2 className="text-4xl font-medium tracking-[-0.02em]">{t.portfolio.title}</h2>
+                <div className="mt-12 grid gap-6 sm:grid-cols-2">
+                    {projects.map((project) => (
+                        <article key={project.id} className="flex flex-col overflow-hidden rounded-2xl border border-ink/10 bg-card">
+                            <img src={project.image} alt="" className="aspect-video w-full border-b border-ink/10 object-cover" />
+                            <div className="flex flex-1 flex-col p-6">
+                                <h3 className="flex items-baseline gap-3 text-xl font-medium">
+                                    <span className="font-mono text-xs text-muted">{project.track}</span>
+                                    {project.title}
+                                </h3>
+                                <p className="mt-3 flex-1 text-[15px] leading-6 text-bark">{t.portfolio.projects[project.id]}</p>
+                                <div className="mt-6">
+                                    <TechIcons tech={project.tech} />
                                 </div>
-                                
-                                <div className="mt-6 flex-grow">
-                                    <h3 className="text-2xl font-semibold text-ink">{project.title}</h3>
-                                    <p className="mt-3 text-sm text-bark/90 leading-relaxed">{t.portfolio.projects[project.id]}</p>
-                                    
-                                    <div className="mt-6 flex flex-wrap gap-2">
-                                        {project.tech.map(tech => (
-                                            <span key={tech} className="px-3 py-1 bg-stone/30 text-ink text-xs font-mono rounded-full border border-stone/50">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
+                                <div className="mt-6 border-t border-ink/10 pt-4">
+                                    <ProjectLinks project={project} viewLive={t.portfolio.viewLive} />
                                 </div>
-
-                                <div className="mt-8 flex gap-4 items-center">
-                                    <a href={project.url}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="text-sm font-medium text-sand bg-ink px-4 py-2 rounded-lg hover:bg-olive transition-colors"
-                                    >
-                                        {t.portfolio.viewLive}
-                                    </a>
-                                    {project.github && (
-                                        <a href={project.github}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="text-sm font-medium text-ink border border-ink px-4 py-2 rounded-lg hover:bg-stone/30 transition-colors"
-                                        >
-                                            GitHub
-                                        </a>
-                                    )}
-                                </div>
-                            </article>
-                        </Tilt>
+                            </div>
+                        </article>
                     ))}
                 </div>
             </div>
